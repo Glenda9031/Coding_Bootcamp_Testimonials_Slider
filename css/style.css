@@ -153,16 +153,118 @@ main {
     background-image: url('../images/icon-next.svg') center / 0.8rem no-repeat #fff;
     border-radius: 50% 0 0 50%;
 }
-/* Buttons Next */
+/* Buttons End */
 
 /* Transitions */
+@keyframes slide-out-to-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
 
+@keyframes slide-out-from-right {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
 
+@keyframes slide-in-to-left {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
 
+@keyframes slide-in-from-right {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+/* Transitions End */
 
+/* Screen Readers Only */
+.sr-only {
+    border: 0;
+    clip: rect(.0625rem .0625rem .0625rem .0625rem);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    height: .0625rem;
+    margin: -.0625rem;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: .0625rem;
+    white-space: nowrap;
+}
+/* Screen Readers Only End */
 
+/* Media Queries */
+@media (min-width: 36rem) {
+    body {
+        background-image: url('../images/pattern-curve.svg') left bottom -2rem / 70% no-repeat;
+    }
 
+    .slider {
+        margin: 0 clamp(1rem, 5vw, 4.5rem);
+    }
 
+    .testimonial {
+        flex-direction: row;
+        align-items: center;
+    }
 
+    .testimonial-picture-container {
+        width: 55%;
+        order: 1;
+        margin: 0;
+        padding: clamp(1rem, 5vw, 4.5rem);
+    }
+
+    .testimonial-picture {
+        width: 100%;
+    }
+
+    .testimonial-blockquote {
+        flex: 1;
+        margin-left: 3rem;
+        margin-right: clamp(-9rem, -10%, -3rem);
+    }
+
+    .testimonial-quote {
+        position: relative;
+        font-size: clamp(1rem, 4vw, 2rem);
+        letter-spacing: 0.01em;
+        line-height: 1.4;
+        text-align: left;
+        padding: 0 0 2.5rem 0;
+    }
+
+    .testimonial-quote::before {
+        background-image: url('../images/pattern-quotes.svg') left top / contain no-repeat;
+        content: '';
+        top: -3.5rem;
+        left: 13%;
+        width: 7.5rem;
+        height: 50%;
+    }
+
+    .testimonial-cite {
+        display: flex;
+        font-size: 1.2rem;
+        gap: 0.5rem;
+    }
+
+    .testimonial-person,
+    .testimonial-type {
+        text-align: left;
+    }
+
+    .buttons {
+        justify-content: onset;
+        left: 0;
+        top: 0;
+        width: auto;
+    }
+
+    .slider-button {
+        width: clamp(1.5rem, 8vw, 4rem);
+        height: clamp(1.5rem, 8vw, 4rem);
+    }
+}
 
 
